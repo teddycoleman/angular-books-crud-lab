@@ -1,20 +1,19 @@
-
 angular
-  .module('tunely', ['ngRoute'])
+  .module('bookApp', ['ngRoute'])
   .config(config);
 
 config.$inject = ['$routeProvider', '$locationProvider'];
 function config(   $routeProvider,  $locationProvider   ) {
   $routeProvider
     .when('/', {
-      templateUrl: '/templates/albums',
-      controllerAs: 'albumsIndexCtrl',
-      controller: 'AlbumsIndexController'
+      templateUrl: 'templates/book.html',
+      controllerAs: 'bookCtrl',
+      controller: 'BookController'
     })
-    .when('/albums/:id', {
-      templateUrl: '/templates/albums-show',
-      controllerAs: 'albumsShowCtrl',
-      controller: 'AlbumsShowController'
+    .when('/books/:id', {
+      templateUrl: '/templates/book-show.html',
+      controllerAs: 'bookShowCtrl',
+      controller: 'BookShowController'
     });
 
   $locationProvider.html5Mode({

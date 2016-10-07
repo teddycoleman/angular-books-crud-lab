@@ -1,0 +1,15 @@
+<div class='container' id='book-container'>
+	<div class='row'>
+		<div class='.col-md-4'>
+			<img src='{{bookShowCtrl.book.image}}'>
+		</div>
+		<div class='.col-md-8'>
+			<h3> Title : <span ng-hide="editing">{{bookShowCtrl.book.title}}</span><input ng-show="editing" ng-model="bookShowCtrl.book.title" type="text" class="form-control input-md"></h3>
+			<h3> Author : <span ng-hide="editing">{{bookShowCtrl.book.author}}</span><input ng-show="editing" ng-model="bookShowCtrl.book.author" type="text" class="form-control input-md"></h3>
+			<h3> Release Date : <span ng-hide="editing">{{bookShowCtrl.book.releaseDate}}</span><input ng-show="editing" ng-model="bookShowCtrl.book.releaseDate" type="text" class="form-control input-md"></h3>
+		</div>
+		<button class='btn btn-danger' ng-click="bookShowCtrl.deleteBook(bookShowCtrl.book)">Delete Album</button>
+        <button class='btn btn-info' ng-hide="editing" ng-click="editing = true">Edit Album</button>
+        <button class='btn btn-success' ng-show="editing" ng-click="bookShowCtrl.editBook(bookShowCtrl.book); editing = false">Save Changes</button>
+	</div>
+</div>

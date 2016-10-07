@@ -13,29 +13,17 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.min.js"></script>
 	<script type="text/javascript" src="/app.js"></script>
+	<script type="text/javascript" src="/bookController.js"></script>
+	<script type="text/javascript" src="/bookShowController.js"></script>
+
 </head>
 <body>
-	<div class='container-fluid .col-md-12' id="page" ng-controller='BookController as bookCtrl'>
+	<div class='container-fluid .col-md-12' id="page">
 		<div class='row'>
 			<h1>Books</h1>
 		</div>
 
-		<div class='row'>
-			<h3> Saving space for a search box for now </h3>
-		</div>
-
-		<div class='container' id='book-container'>
-			<div ng-repeat='book in bookCtrl.books' class='row'>
-				<div class='.col-md-4'>
-					<img src='{{book.image}}'>
-				</div>
-				<div class='.col-md-8'>
-					<h3> Title : {{book.title}}</h3>
-					<h3> Author : {{book.author}}</h3>
-					<h3> Release Date : {{book.releaseDate}}</h3>
-				</div>
-			</div>
-		</div>
+		<div ng-view></div>
 
 	</div>
 </body>
